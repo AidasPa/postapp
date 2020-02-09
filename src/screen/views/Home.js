@@ -9,7 +9,7 @@ class Home {
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2">PostAPP</div>
     <p class="text-gray-700 text-base">
-      Experience the ultimate Single-Page-Application only on PostAPP.
+      The best Single-Page-Application experience you will ever get.
     </p>
   </div>
   <div class="px-6 py-4">
