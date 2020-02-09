@@ -102,10 +102,10 @@ class User {
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">Posts:</div>
         <hr>
-        <table class="w-full">
+        <table :target="tableRoot" class="w-full">
           <thead>
             <tr>
-              <th class="w-1/2 px-4 py-2">Title</th>
+              <th :click="sort_table(0)" class="w-1/2 px-4 py-2 cursor-pointer">Title</th>
             </tr>
           </thead>
           <tbody :target="postTableUser">

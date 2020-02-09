@@ -30,7 +30,7 @@ class SinglePost {
                  ${comment.body}
               </div>
               <div class="px-6 py-4">
-                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">By ${comment.email}</span>    
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">${comment.email}</span>    
               </div>
             </div>
             `;
@@ -54,7 +54,7 @@ class SinglePost {
           </p>
         </div>
         <div class="px-6 py-4">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" :target="postAuthor">By </span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" :target="postAuthor"><box-icon type='solid' name='pencil' size="xs"></box-icon> </span>
           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" :target="commentCount"></span>
         </div>
       </div>

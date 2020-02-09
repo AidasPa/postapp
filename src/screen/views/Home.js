@@ -5,7 +5,7 @@ class Home {
 
   html() {
     return `
-  <div class="w-6/12 rounded overflow-hidden shadow-lg">
+  <div class="w-6/12 rounded overflow-hidden shadow-lg pos-center">
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2">PostAPP</div>
     <p class="text-gray-700 text-base">

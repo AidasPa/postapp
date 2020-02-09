@@ -3,6 +3,7 @@ import App from "./App";
 import Home from "./screen/views/Home";
 import Posts from "./screen/views/Posts";
 import User from "./screen/views/User";
+import Users from "./screen/views/Users";
 
 import SinglePost from "./screen/views/SinglePost";
 
@@ -11,6 +12,11 @@ const routes = {
     path: "/",
     renderView: new App({ view: Home.html() }),
     onload: () => {}
+  },
+  users: {
+    path: "/users",
+    renderView: new App({ view: Users.html() }),
+    onload: () => Users.onload()
   },
   user: {
     path: "/users/:id",

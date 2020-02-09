@@ -1,3 +1,8 @@
 .pageContent {
     padding: 50px 250px 50px 250px; 
 }
+.pos-center {
+    margin-left: 50%;
+    margin-top: 100px;
+    transform: translate(-50%);
+}

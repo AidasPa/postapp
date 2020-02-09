@@ -8,6 +8,7 @@ class Posts {
     this.rows = "";
   }
   onload() {
+    loader(true)
     setTimeout(() => {
       RequestService.get_users().then(users => {
         RequestService.get_posts().then(posts => {
@@ -41,11 +42,11 @@ class Posts {
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">Posts:</div>
           <hr>
-          <table class="w-full">
+          <table :target="tableRoot" class="w-full">
             <thead>
               <tr>
-                <th class="w-1/2 px-4 py-2">Title</th>
-                <th class="w-1/4 px-4 py-2">Author Name</th>
+                <th :click="sort_table(0)" class="w-1/2 px-4 py-2 cursor-pointer">Title</th>
+                <th :click="sort_table(1)" class="w-1/4 px-4 py-2 cursor-pointer">Author Name</th>
               </tr>
             </thead>
             <tbody :target="postTable">
