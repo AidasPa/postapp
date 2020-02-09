@@ -95,7 +95,6 @@ class MinuiFramework {
   }
 
   render(domObj, dataObj, functionObj) {
-    console.log(this.eventTargets);
     this.rootElement.innerHTML = this.proccess_html(
       domObj,
       dataObj,
