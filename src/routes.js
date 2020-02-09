@@ -7,6 +7,14 @@ import Users from "./screen/views/Users";
 
 import SinglePost from "./screen/views/SinglePost";
 
+import Error from "./screen/views/Error";
+
+const errors = {
+  404: {
+    view: Error.err(404, "Page not found!")
+  }
+}
+
 const routes = {
   home: {
     path: "/",
@@ -27,7 +35,7 @@ const routes = {
   },
   single_post: {
     path: "/posts/:id",
-    renderView: props => new App({ view: SinglePost.html(props)}),
+    renderView: props => new App({ view: SinglePost.html(props) }),
     onload: props => {
       SinglePost.onload(props);
     }
@@ -38,6 +46,6 @@ const routes = {
       view: Posts.html()
     }),
     onload: () => Posts.onload()
-  }
+  },
 };
-export default routes;
+export { routes, errors };

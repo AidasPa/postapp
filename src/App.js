@@ -1,5 +1,6 @@
 import Home from "./screen/views/Home";
 import Navbar from "./screen/components/Navbar";
+import Error from "./screen/views/Error";
 
 import { route } from "./index";
 
@@ -63,7 +64,6 @@ class App {
     };
   }
   html() {
-    // console.log()
     return `
     ${Navbar({
       appName: "PostAPP"
@@ -71,8 +71,11 @@ class App {
     <div id="load" class="loaderWrapper">
       <div class="loader"></div>
     </div>
-    <div class="pageContent">
-    ${this.routerView}
+    <div style="display:none" :target="errorTarget">
+      ${Error.err(500, "Something went wrong! Perhaps a wrong request?")}
+    </div>
+    <div style="display:block" :target="pageContentCont" class="pageContent">
+      ${this.routerView}
     </div>
     `;
   }

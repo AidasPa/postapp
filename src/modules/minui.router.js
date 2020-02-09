@@ -12,15 +12,15 @@ if (typeof Array.prototype.reIndexOf === "undefined") {
 }
 
 class MinuiRouter extends MinuiFramework {
-  constructor(routes) {
+  constructor(routes, errors) {
     super();
     this.appRoutes = routes;
+    this.appErrors = errors;
     this.routeData = {};
     this.initialize_router();
-    window.onpopstate = (e) => {
-      console.log(e.state)
+    window.onpopstate = e => {
       this.route_and_render(e.state.path);
-    }
+    };
   }
 
   initialize_router() {
@@ -29,7 +29,6 @@ class MinuiRouter extends MinuiFramework {
       var pathMatch = new RegExp(
         "^" + this.appRoutes[routeName].path.replace(/:(.*)/, "(.*)") + "$"
       );
-      console.log(pathMatch, window.location.pathname);
       if (pathMatch.test(window.location.pathname)) {
         if (/:(.*?)/.test(this.appRoutes[routeName].path)) {
           const nthVariable = this.appRoutes[routeName].path
@@ -56,18 +55,12 @@ class MinuiRouter extends MinuiFramework {
             this.appRoutes[routeName].renderView.func()
           );
           this.appRoutes[routeName].onload();
-
-          // if(!this.appRoutes[routeName].onload === undefined) {
-          // this.appRoutes[routeName].onload().then(resp => {
-          //   console.log(resp)
-          // })
-          // }
         }
         break;
       } else {
         errorsIndex++;
         if (errorsIndex == Object.keys(this.appRoutes).length) {
-          console.error("404: Route Not Found!");
+          this.render(this.appErrors[404].view)
           break;
         }
       }
@@ -76,7 +69,7 @@ class MinuiRouter extends MinuiFramework {
   route_and_render(path) {
     this.renderTimes.push(path);
 
-   history.pushState({ path: path }, path, path);
+    history.pushState({ path: path }, path, path);
     this.initialize_router();
   }
 }

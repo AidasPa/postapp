@@ -1,5 +1,6 @@
 import loader from "../../services/LoaderService";
 import RequestService from "../../services/RequestService";
+import { route } from "../..";
 
 class SinglePost {
   onload(props) {
@@ -42,6 +43,10 @@ class SinglePost {
         ).innerHTML = `<b>${postComments.length}</b> comments`;
       });
 
+      loader(false);
+    }).catch(err => {
+      route.target("pageContentCont").style.display = "none";
+      route.target("errorTarget").style.display = "block";
       loader(false);
     });
   }

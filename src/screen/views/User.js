@@ -44,7 +44,11 @@ class User {
         loader(false);
         route.target("postTableUser").innerHTML = this.rows;
       });
-    });
+    }).catch(err => {
+      route.target("pageContentCont").style.display = "none";
+      route.target("errorTarget").style.display = "block";
+      loader(false);
+    });;
   }
   html() {
     return `
