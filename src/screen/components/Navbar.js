@@ -8,15 +8,22 @@ function Navbar(props = {}) {
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
           <a
+            :click="page(/)" 
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 cursor-pointer"
+          >
+            Home
+          </a>
+          <a
             :click="page(/posts)" 
             class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 cursor-pointer"
           >
             Posts
           </a>
           <a
+            :click="page(/users)" 
             class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 cursor-pointer"
           >
-            ...
+            Users
           </a>
         </div>
         <div>

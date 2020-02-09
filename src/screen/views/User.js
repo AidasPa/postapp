@@ -28,7 +28,8 @@ class User {
       this.rows = "";
 
       RequestService.get_posts().then(posts => {
-        posts.data.forEach(post => {
+        const userPosts = posts.data.filter(post => post.userId == user.id);
+        userPosts.forEach(post => {
           this.rows += `
             <tr>
               <td

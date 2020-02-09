@@ -12,15 +12,16 @@ class Posts {
       RequestService.get_users().then(users => {
         RequestService.get_posts().then(posts => {
           posts.data.forEach(post => {
-            //onclick="window.history.pushState({path: '/users/${post.userId}'}, 'user', '/users/${post.userId}')"
-
             this.rows += `
               <tr>
-                <td class="border px-4 py-2">${post.title}</td>
                 <td
-                  onclick="window.route.route_and_render('/users/${
-                    post.userId
-                  }')"
+                  onclick="window.route.route_and_render('/posts/${post.id}')"
+                  class="border px-4 py-2 hover:underline cursor-pointer"
+                >
+                  ${post.title}
+                </td>
+                <td
+                  onclick="window.route.route_and_render('/users/${post.userId}')"
                   class="border px-4 py-2 hover:underline cursor-pointer"
                 >
                   ${users.data[post.userId - 1].name}

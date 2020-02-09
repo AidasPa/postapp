@@ -6,6 +6,9 @@ class RequestService {
   get_posts() {
     return axios.get(API + "posts");
   }
+  get_comments() {
+    return axios.get(API + "comments");
+  }
   get_users() {
     return axios.get(API + "users");
   }
