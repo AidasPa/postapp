@@ -1,6 +1,8 @@
+@import "shame.css";
+@import "loader.css";
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "shame.css";
-@import "loader.css";
+

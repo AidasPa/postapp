@@ -28,14 +28,19 @@ module.exports = merge(common, {
     ]
   },
   module: {
-    rules: []
+    rules: [
+      {
+        // use: [MiniCssExtactPlugin.loader]
+      }
+    ]
   },
   plugins: [
-    new MiniCssExtactPlugin({
-      filename: "[name].[contentHash].css"
-    }),
+    // new MiniCssExtactPlugin({
+    //   filename: "[name].[contentHash].css"
+    // }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      template: "./src/template.html",
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
