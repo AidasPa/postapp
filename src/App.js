@@ -1,4 +1,3 @@
-import Home from "./screen/views/Home";
 import Navbar from "./screen/components/Navbar";
 import Error from "./screen/views/Error";
 
