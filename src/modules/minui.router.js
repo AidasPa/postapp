@@ -19,6 +19,7 @@ class MinuiRouter extends MinuiFramework {
     this.routeData = {};
     this.initialize_router();
     window.onpopstate = e => {
+      
       this.route_and_render(e.state.path);
     };
   }
