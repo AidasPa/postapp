@@ -28,12 +28,7 @@ module.exports = merge(common, {
     ]
   },
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [MiniCssExtactPlugin.loader]
-      }
-    ]
+    rules: []
   },
   plugins: [
     new MiniCssExtactPlugin({
