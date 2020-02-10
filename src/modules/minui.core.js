@@ -1,6 +1,6 @@
 class MinuiFramework {
   constructor(rootElement) {
-    this.rootElement = document.querySelector("#app");
+    this.rootElement = document.querySelector(rootElement);
     this.eventTargets = [];
     this.renderTimes = [];
     this.dynamicTargets = [];
